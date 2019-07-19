@@ -4,3 +4,10 @@ Sistema de login com registro de novo usuário e recuperação de senha
 ## aula01 - 18/07/2019
 Configuramos o projeto, milestones e issues para o sistema de login.
 Criação do arquivo index.php e formulário de login.
+
+
+## aula02 - 19/07/2019
+:rocket: :moon: 50 anos do homem na lua
+Formulário de cadastro de novo usuário.
+Formulário de recuperação de senha.
+Mostrar e ocultar formulário com jQuery.
