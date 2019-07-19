@@ -10,5 +10,7 @@ Criação do arquivo index.php e formulário de login.
 :rocket: :moon: 50 anos do homem na Lua.
 
 Formulário de cadastro de novo usuário.
+
 Formulário de recuperação de senha.
+
 Mostrar e ocultar formulário com jQuery.
