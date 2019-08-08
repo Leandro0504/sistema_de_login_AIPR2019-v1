@@ -158,43 +158,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
-    
 
-        <script >
-            /* jQuery */
-            $(function() {
 
-                //Trocar da Tela de Login para Recuperar Senha
-                $("#btnEsqueci").click(function() {
-                    $("#caixaLogin").hide();
-                    $("#caixaRecuperarSenha").show();
-                });
+    <script>
+        /* jQuery */
+        $(function() {
 
-                //Voltar para a tela de Login
-                $("#btnVoltar").click(function() {
-                    $("#caixaLogin").show();
-                    $("#caixaRecuperarSenha").hide();
-                });
-
-                //Trocar de tela de Login para cadastro de usuário
-                $('#btnCadastrar').click(function() {
-                    $("#caixaLogin").hide();
-                    $("#caixaCadastro").show();
-                });
-
-                //Voltar para a tela de Login
-                $('#btnJáCadastrado').click(function() {
-                    $("#caixaLogin").show(); //mostrar
-                    $("#caixaCadastro").hide(); //ocultar
-                });
-
-                $("#formLogin").validate();
-                $("#formCadastro").validate();
-                $("#formSenha").validate();
-
+            //Trocar da Tela de Login para Recuperar Senha
+            $("#btnEsqueci").click(function() {
+                $("#caixaLogin").hide();
+                $("#caixaRecuperarSenha").show();
             });
+
+            //Voltar para a tela de Login
+            $("#btnVoltar").click(function() {
+                $("#caixaLogin").show();
+                $("#caixaRecuperarSenha").hide();
+            });
+
+            //Trocar de tela de Login para cadastro de usuário
+            $('#btnCadastrar').click(function() {
+                $("#caixaLogin").hide();
+                $("#caixaCadastro").show();
+            });
+
+            //Voltar para a tela de Login
+            $('#btnJáCadastrado').click(function() {
+                $("#caixaLogin").show(); //mostrar
+                $("#caixaCadastro").hide(); //ocultar
+            });
+
+            //jQuery Validation 
+            $("#formLogin").validate();
+            $("#formCadastro").validate();
+            $("#formSenha").validate();
+
+        });
     </script>
 </body>
 
