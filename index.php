@@ -76,7 +76,7 @@
         <section class="row mb-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaCadastro">
                 <h2 class="text-center">Cadastro de Usuário</h2>
-                <form action="#" class="p-2" id="frmCadastro">
+                <form action="#" class="p-2" id="formCadastro">
 
                     <div class="form-group">
                         <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlenght="5">
@@ -160,6 +160,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    
+
         <script >
             /* jQuery */
             $(function() {
@@ -188,6 +190,9 @@
                     $("#caixaCadastro").hide(); //ocultar
                 });
 
+                $("#formLogin").validate();
+                $("#formCadastro").validate();
+                $("#formSenha").validate();
 
             });
     </script>
