@@ -79,11 +79,11 @@
                 <form action="#" class="p-2" id="formCadastro">
 
                     <div class="form-group">
-                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlenght="5">
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minLenght="5">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlenght="5" required>
+                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minLenght="5" required>
                     </div>
 
                     <div class="form-group">
@@ -91,11 +91,11 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minlenght="6" required>
+                        <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minLenght="6" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme a sua senha" minlenght="6" required>
+                        <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme a sua senha" minLenght="6" required>
                     </div>
 
                     <div class="form-group">
