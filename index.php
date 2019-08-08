@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
     <title>Sistema de Login Sistemas Zanella</title>
     <style>
         #caixaCadastro,
@@ -45,7 +46,7 @@
                         <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlenght="6" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
 
@@ -79,11 +80,11 @@
                 <form action="#" class="p-2" id="formCadastro">
 
                     <div class="form-group">
-                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minLenght="5">
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlength="5">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minLenght="5" required>
+                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlength="5" required>
                     </div>
 
                     <div class="form-group">
@@ -91,14 +92,14 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minLenght="6" required>
+                        <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minlength="6" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme a sua senha" minLenght="6" required>
+                        <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme a sua senha" minlength="6" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
                             <label for="concordar" class="custom-control-label">
@@ -192,9 +193,19 @@
 
             //jQuery Validation 
             $("#formLogin").validate();
-            $("#formCadastro").validate();
             $("#formSenha").validate();
 
+            $.validator.setDefaults({
+                success: "valid"
+            });
+
+            $("#formCadastro").validate({
+                rules: {
+                    senhaConfirma: {
+                        equalTo: "#senhaUsuário"
+                    }
+                }
+            });
         });
     </script>
 </body>
