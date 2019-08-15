@@ -24,7 +24,7 @@
         <section class="row">
             <div class="col-lg-4 offset-lg-4" id="alerta">
                 <div class="alert alert-success text-center">
-                    <strong id="resultado"></strong>
+                    <strong id="resultado"> </strong>
                 </div>
             </div>
         </section>
@@ -141,25 +141,53 @@
             // Envio dos dados do formulário de login
             $("#btnEntrar").click(function(e) {
                 let formLogin = document.querySelector('#formLogin')
-                if(formLogin.checkValidity()){
-                    e.preventDefault();// Não recarregar a página
+                if (formLogin.checkValidity()) {
+                    e.preventDefault(); // Não recarregar a página
                     $.ajax({
                         url: 'recebe.php',
                         method: 'post',
-                        data: $('#formLogin').serialize()+'&action=login',
-                        success: function(resposta){
+                        data: $('#formLogin').serialize() + '&action=login',
+                        success: function(resposta) {
                             $('#alerta').show();
-                            $('#resultado').html("resposta:"+resposta);
+                            $('#resultado').html(resposta);
                         }
                     });
                 }
             });
 
             // Formulário de Cadastro de usuario
-            $("#btnRegistrar").click();
+            $("#btnRegistrar").click(function(e) {
+                let formCadastro = document.querySelector('#formCadastro')
+                if (formCadastro.checkValidity()) {
+                    e.preventDefault(); // Não recarregar a página
+                    $.ajax({
+                        url: 'recebe.php',
+                        method: 'post',
+                        data: $('#formCadastro').serialize() + '&action=cadastro',
+                        success: function(resposta) {
+                            $('#alerta').show();
+                            $('#resultado').html(resposta);
+                        }
+                    });
+                }
+            });
 
             // Formulário para mudar de senha
-            $("#btnEnviarEmail").click();
+            $("#btnEnviarEmail").click(function(e) {
+                let formSenha = document.querySelector('#formSenha')
+                if (formSenha.checkValidity()) {
+                    e.preventDefault(); // Não recarregar a página
+                    $.ajax({
+                        url: 'recebe.php',
+                        method: 'post',
+                        data: $('#formSenha').serialize() + '&action=senha',
+                        success: function(resposta) {
+                            $('#alerta').show();
+                            $('#resultado').html(resposta);
+                        }
+                    });
+                }
+            });
 
             //Trocar da Tela de Login para Recuperar Senha
             $("#btnEsqueci").click(function() {
