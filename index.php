@@ -34,10 +34,10 @@
                 <h2 class="text-center mt-2">Entrada no sistema</h2>
                 <form id="formLogin" class="p-2">
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required autocomplete="off">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" autocomplete="off" minlength="5" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlength="6">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" autocomoplete="off" required minlength="6">
                     </div>
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
@@ -67,13 +67,13 @@
                 <h2 class="text-center">Cadastro de Usuário</h2>
                 <form action="#" class="p-2" id="formCadastro">
                     <div class="form-group">
-                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlength="5">
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" autocomplete="off" required minlength="5">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlength="5" required>
+                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlength="5" autocomplete="off" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" required>
+                        <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" autocomplete="off" required>
                     </div>
                     <div class="form-group">
                         <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minlength="6" required>
@@ -150,6 +150,10 @@
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
+                            if(resposta == "ok"){
+                                // Redirecionamento
+                                window.location = "profile.php";
+                            }
                         }
                     });
                 }
