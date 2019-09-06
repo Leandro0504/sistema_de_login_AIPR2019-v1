@@ -1,12 +1,12 @@
 <?php
-// Iniciando a sessão
+//Iniciando a sessão
 session_start();
-// Conectando com o banco de dados
+//Conectando com o banco de dados
 require_once 'configDB.php';
 
-if(isset($_SESSION['nomeUsuario'])){
-    //echo "usuário Logado!";
-    $usuario = $_SESSION['nomeUsuario'];    
+if (isset($_SESSION['nomeUsuario'])) {
+    //echo "usuário logado!";
+    $usuario = $_SESSION['nomeUsuario'];
     $sql = $conecta->prepare("SELECT * FROM usuario WHERE nomeUsuario = ?");
     $sql->bind_param("s", $usuario);
     $sql->execute();
@@ -16,7 +16,8 @@ if(isset($_SESSION['nomeUsuario'])){
     $nome = $linha['nome'];
     $email = $linha['email'];
     $dataCriacao = $linha['dataCriacao'];
-}else{
-    // Kick
+    $urlAvatar = $linha['avatar_url'];
+} else {
+    //Kick
     header("location: index.php");
 }

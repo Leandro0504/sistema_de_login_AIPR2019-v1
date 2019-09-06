@@ -1,10 +1,13 @@
 <?php
-    session_start();
-    if(isset($_SESSION['nomeUsuario']))
-        header("location: profile.php");
+session_start();
+if (isset($_SESSION['nomeUsuario']))
+    //Bloqueando usuários logados
+    header("location: profile.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
-    <title>Sistema de Login Sistemas TNX</title>
+    <title>Sistema de Login Sistemas Hill</title>
     <style>
         #caixaCadastro,
         #caixaRecuperarSenha,
@@ -33,17 +36,21 @@
                 </div>
             </div>
         </section>
+
         <!-- Formulário de Login -->
         <section class="row mb-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
                 <h2 class="text-center mt-2">Entrada no sistema</h2>
                 <form id="formLogin" class="p-2">
+
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" autocomplete="off" minlength="5" required>
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required autocomplete="off">
                     </div>
+
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" autocomoplete="off" required minlength="6">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlength="6">
                     </div>
+
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
@@ -72,20 +79,29 @@
                 <h2 class="text-center">Cadastro de Usuário</h2>
                 <form action="#" class="p-2" id="formCadastro">
                     <div class="form-group">
-                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" autocomplete="off" required minlength="5">
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo" required minlength="5">
                     </div>
+
                     <div class="form-group">
-                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlength="5" autocomplete="off" required>
+                        <input type="text" name="nomeUsuário" id="nomeUsuário" class="form-control" placeholder="Nome de Usuário" minlength="5" required>
                     </div>
+
                     <div class="form-group">
-                        <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" autocomplete="off" required>
+                        <input type="email" name="emailUsuário" id="emailUsuário" class="form-control" placeholder="E-mail de Usuário" required>
                     </div>
+
+                    <div class="form-group">
+                        <input type="url" name="urlAvatar" id="urlAvatar" class="form-control" placeholder="URL para imagem do seu perfil" required>
+                    </div>
+
                     <div class="form-group">
                         <input type="password" name="senhaUsuário" id="senhaUsuário" class="form-control" placeholder="Digite sua senha" minlength="6" required>
                     </div>
+
                     <div class="form-group">
                         <input type="password" name="senhaConfirma" id="senhaConfirma" class="form-control" placeholder="Confirme a sua senha" required minlength="6">
                     </div>
+
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
@@ -155,8 +171,7 @@
                         success: function(resposta) {
                             $('#alerta').show();
                             $('#resultado').html(resposta);
-                            if(resposta === "ok"){
-                                // Redirecionamento
+                            if (resposta === "ok!") {
                                 window.location = "profile.php";
                             }
                         }
