@@ -16,7 +16,7 @@ if (isset($_SESSION['nomeUsuario']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
-    <title>Sistema de Login Sistemas Hill</title>
+    <title>Sistema de Login Zanella Systems</title>
     <style>
         #caixaCadastro,
         #caixaRecuperarSenha,
@@ -44,35 +44,45 @@ if (isset($_SESSION['nomeUsuario']))
                 <form id="formLogin" class="p-2">
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required autocomplete="off">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required minlenght="5" value="<?php
+                                                                                                                                                                                if (isset($_COOKIE['nomeUsuario']))
+                                                                                                                                                                                    echo $_COOKIE['nomeUsuario'];
+                                                                                                                                                                                ?>">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlength="6">
-                    </div>
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required minlenght="6" value="<?php
+                                                                                                                                                            if (isset($_COOKIE['senhaUsuario']))
+                                                                                                                                                                echo $_COOKIE['senhaUsuario'];
+                                                                                                                                                            ?>">
 
-                    <div class="form-group mt-5">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
-                            <label for="lembrar" class="custom-control-label">
-                                Lembrar de mim.
-                            </label>
-                            <a href="#" id="btnEsqueci" class="float-right">
-                                Esqueci a senha!
-                            </a>
+                        <div class="form-group mt-5">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?php
+                                                                                                                if (isset($_COOKIE['nomeUsuario']));
+                                                                                                                echo " checked"; ?>>
+
+
+                                <label for="lembrar" class="custom-control-label">
+                                    Lembrar de mim.
+                                </label>
+                                <a href="#" id="btnEsqueci" class="float-right">
+                                    Esqueci a senha!
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value=":: Entrar ::" name="btnEntrar" id="btnEntrar" class="btn btn-primary btn-block">
-                    </div>
-                    <div class="form-group">
-                        <p class="center">Novo usuário?
-                            <a href="#" id="btnCadastrar">Cadastre-se aqui.</a>
-                        </p>
-                    </div>
+                        <div class="form-group">
+                            <input type="submit" value="Entrar" name="btnEntrar" id="btnEntrar" class="btn btn-primary btn-block">
+                        </div>
+                        <div class="form-group">
+                            <p class="center">Novo usuário?
+                                <a href="#" id="btnCadastrar">Cadastre-se aqui.</a>
+                            </p>
+                        </div>
                 </form>
             </div>
         </section>
+
         <!-- Formulário de Cadastro -->
         <section class="row mb-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaCadastro">

@@ -19,7 +19,7 @@ require_once 'session.php';
 
 <body class="bg-dark">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Hillesheim Systems</a>
+        <a class="navbar-brand" href="#">Zanella Systems</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,10 +51,10 @@ require_once 'session.php';
     <main class="container mt-4">
 
         <div class="row">
-            <div class="col-4">
+            <div class="offset-lg-2 col-3">
                 <img src="<?= $urlAvatar ?>" alt="Foto de <?= $usuario ?>" width="200" height="200" />
             </div>
-            <div class="col-8">
+            <div class="col-7">
                 <h1 class="text-light">Perfil de usuário</h1>
                 <h2 class="text-light">Nome: <?= $nome ?></h2>
                 <h2 class="text-light">E-mail: <?= $email ?></h2>
