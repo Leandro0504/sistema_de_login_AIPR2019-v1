@@ -37,7 +37,7 @@ if (
             //Se não estiver vazio
             //Armazenar Login e Senha no Cookie
             setcookie("nomeUsuario", $nomeUsuario, time() + (30 * 24 * 60 * 60));
-            setcookie("senhaUsario", $senhaUsuario, time() + (30 * 24 * 60 * 60)); //30 dias em segundos
+            setcookie("senhaUsuario", $senhaUsuario, time() + (30 * 24 * 60 * 60)); //30 dias em segundos
         } else {
             //Se estiver vazio
             setcookie("nomeUsuario", "");

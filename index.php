@@ -44,10 +44,10 @@ if (isset($_SESSION['nomeUsuario']))
                 <form id="formLogin" class="p-2">
 
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required minlenght="5" value="<?php
-                                                                                                                                                                                if (isset($_COOKIE['nomeUsuario']))
-                                                                                                                                                                                    echo $_COOKIE['nomeUsuario'];
-                                                                                                                                                                                ?>">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do usuário" minlength="5" required value="<?php
+                                                                                                                                                                if (isset($_COOKIE['nomeUsuario']))
+                                                                                                                                                                    echo $_COOKIE['nomeUsuario'];
+                                                                                                                                                                ?>">
                     </div>
 
                     <div class="form-group">
@@ -59,8 +59,8 @@ if (isset($_SESSION['nomeUsuario']))
                         <div class="form-group mt-5">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?php
-                                                                                                                if (isset($_COOKIE['nomeUsuario']));
-                                                                                                                echo " checked"; ?>>
+                                                                                                                if (isset($_COOKIE['nomeUsuario']))
+                                                                                                                    echo " checked"; ?>>
 
 
                                 <label for="lembrar" class="custom-control-label">
@@ -82,7 +82,6 @@ if (isset($_SESSION['nomeUsuario']))
                 </form>
             </div>
         </section>
-
         <!-- Formulário de Cadastro -->
         <section class="row mb-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaCadastro">
